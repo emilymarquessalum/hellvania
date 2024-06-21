@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cinfu2rgyxnpt"]
+
+[ext_resource type="Script" path="res://scenes/dialogue_box.gd" id="1_1h6ns"]
+[ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="2_e4o81"]
+
+[node name="dialogue_box" type="Panel"]
+offset_left = 226.0
+offset_top = 466.0
+offset_right = 952.0
+offset_bottom = 610.0
+script = ExtResource("1_1h6ns")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 15.0
+offset_right = 686.0
+offset_bottom = 98.0
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "DIALOGUE CHARACTER NAME"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "I am talking quite a lot in hereI am talking quite a lot in hereI am talking quite a lot in hereI am talking quite a lot in hereI am talking quite a lot in hereI am talking quite a lot in hereI am talking quite a lot in hereI am talking quite a lot in here"
+autowrap_mode = 2
+
+[node name="EzDialogue" type="Node" parent="."]
+script = ExtResource("2_e4o81")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="dialogue_generated" from="EzDialogue" to="." method="_on_ez_dialogue_dialogue_generated"]
